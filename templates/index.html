@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>House Price Prediction</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row mt-2 mb-3">
+        <div class="d-flex justify-content-center">
+          <h1>House Price Prediction</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-4 col-lg-4 justify-content-center mx-auto text-center">
+          <div class="row mb-3">
+            <label>LotArea</label>
+            <input class="form-control" type="number" id="uiLotArea" value="1200" />
+          </div>
+          <div class="row mb-3">
+            <label>TotalBsmtSF</label>
+            <input class="form-control" type="number" id="uiTotalBsmtSF" value="1200" />
+          </div>
+          <div class="row mb-3">
+            <label>GrLivArea</label>
+            <input class="form-control" type="number" id="uiGrLivArea" value="1200" />
+          </div>
+          <div class="row mb-3">
+            <label>FullBath</label>
+            <input class="form-control" type="number" id="uiFullBath" value="2" />
+          </div>
+          <div class="row mb-3">
+            <label>BedroomAbvGr</label>
+            <input class="form-control" type="number" id="uiBedroomAbvGr" value="2" />
+          </div>
+          <div class="row mb-3">
+            <label>KitchenAbvGr</label>
+            <input class="form-control" type="number" id="uiKitchenAbvGr" value="2" />
+          </div>
+          <div class="row mb-3">
+            <label>Utilities</label>
+            <div>
+              <select class="form-select" id="uiUtilities">
+                <option disabled="disabled" selected="selected">Choose a Utilities</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 col-lg-4 justify-content-center mx-auto text-center">
+          <div class="row mb-3">
+            <label>Alley</label>
+            <div>
+              <select class="form-select" id="uiAlley">
+                <option disabled="disabled" selected="selected">Choose a Alley</option>
+              </select>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label>Street</label>
+            <div>
+              <select class="form-select" id="uiStreet">
+                <option disabled="disabled" selected="selected">Choose a Street</option>
+              </select>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label>Porch</label>
+            <div>
+              <select class="form-select" id="uiPorch">
+                <option disabled="disabled" selected="selected">Choose a Porch</option>
+              </select>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label>Garage</label>
+            <div>
+              <select class="form-select" id="uiGarage">
+                <option disabled="disabled" selected="selected">Choose a Garage</option>
+              </select>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label>CentralAir</label>
+            <div>
+              <select class="form-select" id="uiCentralAir">
+                <option disabled="disabled" selected="selected">Choose a CentralAir</option>
+              </select>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label>Neighborhood</label>
+            <div>
+              <select class="form-select" id="uiNeighborhood">
+                <option disabled="disabled" selected="selected">Choose a Neighborhood</option>
+              </select>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label>MSZoning</label>
+            <div>
+              <select class="form-select" id="uiMSZoning">
+                <option disabled="disabled" selected="selected">Choose a MSZoning</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 col-lg-4 justify-content-center mx-auto text-center">
+          <div class="row mb-3">
+            <label>BldgType</label>
+            <div>
+              <select class="form-select" id="uiBldgType">
+                <option disabled="disabled" selected="selected">Choose a BldgType</option>
+              </select>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label>HouseStyle</label>
+            <div>
+              <select class="form-select" id="uiHouseStyle">
+                <option disabled="disabled" selected="selected">Choose a HouseStyle</option>
+              </select>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label>RoofStyle</label>
+            <div>
+              <select class="form-select" id="uiRoofStyle">
+                <option disabled="disabled" selected="selected">Choose a RoofStyle</option>
+              </select>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label>ExterCond</label>
+            <div>
+              <select class="form-select" id="uiExterCond">
+                <option disabled="disabled" selected="selected">Choose a ExterCond</option>
+              </select>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label>Heating</label>
+            <div>
+              <select class="form-select" id="uiHeating">
+                <option disabled="disabled" selected="selected">Choose a Heating</option>
+              </select>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label>Electrical</label>
+            <div>
+              <select class="form-select" id="uiElectrical">
+                <option disabled="disabled" selected="selected">Choose a Electrical</option>
+              </select>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label>PoolQC</label>
+            <div>
+              <select class="form-select" id="uiPoolQC">
+                <option disabled="disabled" selected="selected">Choose a PoolQC</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 d-flex justify-content-center my-3">
+        <button class="btn btn-info btn-lg mx-2" onclick="predict()" type="button">Predict Price</button>
+        <input type="text" id="Price" disabled class="form-control w-25" />
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>
